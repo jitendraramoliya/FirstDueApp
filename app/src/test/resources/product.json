@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "total_products": 1000,
+  "message": "Successfully fetched 10 of 1000 products",
+  "offset": 10,
+  "limit": 10,
+  "products": [
+    {
+      "name": "Product 11",
+      "price": 345.6,
+      "description": "Region half list company.",
+      "category": "physical",
+      "updated_at": "2023-03-03T13:57:09.399091",
+      "photo_url": "https://api.slingacademy.com/public/sample-products/11.png",
+      "id": 11,
+      "created_at": "2023-03-03T13:57:09.399090"
+    },
+    {
+      "name": "Product 12",
+      "price": 832.24,
+      "description": "Approach how then maybe public summer.",
+      "category": "physical",
+      "updated_at": "2023-03-03T13:57:09.399092",
+      "photo_url": "https://api.slingacademy.com/public/sample-products/12.png",
+      "id": 12,
+      "created_at": "2023-03-03T13:57:09.399091"
+    },
+    {
+      "name": "Product 13",
+      "price": 935.53,
+      "description": "Teacher magazine conference contain.",
+      "category": "digital",
+      "updated_at": "2023-03-03T13:57:09.399093",
+      "photo_url": "https://api.slingacademy.com/public/sample-products/13.png",
+      "id": 13,
+      "created_at": "2023-03-03T13:57:09.399092"
+    },
+    {
+      "name": "Product 14",
+      "price": 180.16,
+      "description": "Party become beyond analysis.",
+      "category": "digital",
+      "updated_at": "2023-03-03T13:57:09.399094",
+      "photo_url": "https://api.slingacademy.com/public/sample-products/14.png",
+      "id": 14,
+      "created_at": "2023-03-03T13:57:09.399093"
+    }
+  ]
+}
