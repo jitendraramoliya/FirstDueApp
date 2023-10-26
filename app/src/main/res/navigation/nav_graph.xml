@@ -3,26 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/LoginFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.firstdueapplication.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/LoginFragment"
+        android:name="com.firstdueapplication.ui.fragment.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_DashboardFragment"
+            app:destination="@id/DashboardFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.firstdueapplication.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/RegisterFragment"
+        android:name="com.firstdueapplication.ui.fragment.RegisterFragment"
+        android:label="@string/register_fragment_label"
+        tools:layout="@layout/fragment_register">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_RegisterFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+        <action
+            android:id="@+id/action_RegisterFragment_to_AnimalFragment"
+            app:destination="@id/AnimalFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/DashboardFragment"
+        android:name="com.firstdueapplication.ui.fragment.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/AnimalFragment"
+        android:name="com.firstdueapplication.ui.fragment.AnimalFragment"
+        android:label="AnimalFragment"
+        tools:layout="@layout/fragment_animal" />
 </navigation>
