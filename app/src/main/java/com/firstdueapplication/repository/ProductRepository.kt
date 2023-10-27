@@ -1,5 +1,6 @@
 package com.firstdueapplication.repository
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.firstdueapplication.api.NetworkResult
 import com.firstdueapplication.api.ProductApi
@@ -9,14 +10,14 @@ import com.firstdueapplication.models.ProductList
 import javax.inject.Inject
 
 
-class ProductRepository @Inject constructor(private val productApi: ProductApi) {
+open class ProductRepository @Inject constructor(private val productApi: ProductApi) {
 
     private var _productMutableList = MutableLiveData<NetworkResult<List<Product>>>()
-    public val productMutableList
+    public val productMutableList: LiveData<NetworkResult<List<Product>>>
         get() = _productMutableList
 
     private var _animalMutableList = MutableLiveData<NetworkResult<List<Photo>>>()
-    public val animalMutableList
+    public val animalMutableList: LiveData<NetworkResult<List<Photo>>>
         get() = _animalMutableList
 
     suspend fun getProdcutList() {

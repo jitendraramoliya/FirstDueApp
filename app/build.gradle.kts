@@ -35,15 +35,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
-        // freeCompilerArgs = ['-Xjvm-default=compatibility']
+        freeCompilerArgs = listOf("-Xjvm-default=all-compatibility")
     }
     buildFeatures {
         viewBinding = true
     }
-
-    /* kotlin {
-         jvmToolchain(1_8)
-     }*/
 }
 
 dependencies {
@@ -65,15 +61,17 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.ext:junit-ktx:1.1.5")
 
+    debugImplementation("androidx.fragment:fragment-testing:1.6.1")
+
     // espresso test
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test.espresso:espresso-intents:3.5.1")
 
     // Optional -- Mockito framework
-    testImplementation("org.mockito:mockito-core:4.0.0")
+    testImplementation("org.mockito:mockito-core:4.4.0")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.9.0")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+    androidTestImplementation("org.mockito:mockito-android:4.0.0")
 
     // coroutines test
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
@@ -84,10 +82,10 @@ dependencies {
     androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
 
     //hilt testing
-    kaptTest("com.google.dagger:hilt-android-compiler:2.44")
-    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44")
     testImplementation("com.google.dagger:hilt-android-testing:2.44")
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
+    kaptTest("com.google.dagger:hilt-android-compiler:2.44")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44")
 
     //InstrumentationTest [UI Tests - Ui Interaction]
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

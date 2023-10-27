@@ -13,6 +13,7 @@ import com.firstdueapplication.R
 import com.firstdueapplication.api.NetworkResult
 import com.firstdueapplication.databinding.FragmentRegisterBinding
 import com.firstdueapplication.models.UserRequest
+import com.firstdueapplication.utils.Utils
 import com.firstdueapplication.viewmodel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,6 +46,9 @@ class RegisterFragment : Fragment() {
         }
 
         binding.btnSignUp.setOnClickListener {
+            binding.btnLogin.requestFocus()
+            Utils.hideKeyboard(requireContext(), binding.btnLogin)
+            
             val validateUserInput = authViewModel.validateUserInput(getUserRequest(), false)
             if (validateUserInput.first) {
                 binding.txtError.text = ""

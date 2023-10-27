@@ -2,6 +2,7 @@ package com.firstdueapplication.viewmodel
 
 import android.text.TextUtils
 import android.util.Patterns
+import androidx.core.util.PatternsCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -34,19 +35,23 @@ class AuthViewModel @Inject constructor(private val userRepository: UserReposito
 
     fun validateUserInput(userRequest: UserRequest, isLogin: Boolean): Pair<Boolean, String> {
         var result = Pair(true, "")
-        if (!isLogin && TextUtils.isEmpty(userRequest.username)) {
+        if (!isLogin && isEmpty(userRequest.username)) {
             result = Pair(false, "Please enter username")
-        } else if (TextUtils.isEmpty(userRequest.email)) {
+        } else if (isEmpty(userRequest.email)) {
             result = Pair(false, "Please enter email")
-        } else if (TextUtils.isEmpty(userRequest.password)) {
+        } else if (isEmpty(userRequest.password)) {
             result = Pair(false, "Please enter password")
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(userRequest.email).matches()) {
+        } else if (!PatternsCompat.EMAIL_ADDRESS.matcher(userRequest.email).matches()) {
             result = Pair(false, "Please enter valid email")
         } else if (userRequest.password.length < 5 || userRequest.password.length > 15) {
             result = Pair(false, "Password should character length should be fall in 5 to 15")
         }
 
         return result
+    }
+
+    fun isEmpty(str: CharSequence):Boolean{
+        return str == null || str.length == 0
     }
 
 }
